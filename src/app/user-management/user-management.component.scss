@@ -1,0 +1,149 @@
+$light-gray: #c9c9c9;
+$heading-blue: #008fdb;
+$section-heading-white: #fff;
+$form-input-gray: #ededed;
+$light-green: #8ed491;
+$light-red: #e38888;
+$form-input-border: 1.2px solid gray;
+$add-btn-blue: #006ca6;
+
+.container {
+	background: $light-gray;
+	padding: 20px;
+}
+
+.adUsrHeading {
+	color: $heading-blue;
+	position: relative;
+	top: -20px;
+}
+
+.form-container {
+	background-color: $section-heading-white;
+	padding: 40px;
+	margin: 0px;
+	border-radius: 5px;
+	height: 330px;
+}
+
+.form-input {
+	margin-bottom: 20px;
+	background-color: $form-input-gray;
+	font-style: italic;
+	border-radius: 5px;
+	border: $form-input-border;
+	width: 250px;
+}
+
+.addBtn {
+	input {
+		background-color: $add-btn-blue;
+		height: 30px;
+		width: 100px;
+		color: white;
+		border-radius: 5px;
+		width: 100px;
+	}
+}
+
+.example-viewport1 {
+	background-color: $section-heading-white;
+	padding: 30px;
+	margin: 0px;
+	border-radius: 5px;
+	height: 330px;
+}
+
+.ActHstHeading {
+	color: $heading-blue;
+	padding: 20px;
+}
+
+.actioncontent {
+	padding-left: 20px;
+	padding-bottom: 5px;
+}
+
+.timeStmpDesc {
+	font-weight: bold;
+}
+
+.example-viewport2 {
+	background-color: $section-heading-white;
+	padding: 30px;
+	margin-top: 20px;
+	border-radius: 5px;
+	height: 400px;
+}
+
+.UsrDtlHeading {
+	color: $heading-blue;
+	padding: 10px;
+}
+
+.UsrDtlTbl {
+	width: 97%;
+	margin: 0 auto;
+}
+
+.tblHeadCols {
+	background-color: #7dbadb;
+	color: white;
+}
+
+.dltIcn {
+	position: relative;
+	left: 15px;
+}
+
+.time {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.modalPopup {
+	width: 500px;
+	height: 150px;
+}
+
+.modal-header {
+	background-color: red;
+	position: relative;
+	top: -2px;
+}
+
+.modal-title {
+	margin: 0 auto;
+	color: white;
+	height: 6px;
+	position: relative;
+	top: -13px;
+}
+
+.modal-body{
+	color: gray;
+    font-family: Microsoft YaHei;
+	height: 40px;
+}
+
+.modal-footer{
+	border: none;
+}
+
+.noBtn {
+	background-color: $light-green;
+	color: white;
+	width: 100px;
+	border-radius: 0px;
+	position: relative;
+	top: 2px;
+}
+
+.dltBtn {
+	background-color: $light-red;
+	color: white;
+	width: 100px;
+	border-radius: 0px;
+	position: relative;
+	top: 2px;
+}

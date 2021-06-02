@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <form #adminform="ngForm" (ngSubmit)="login(adminform); adminform.resetForm()" class="form-signin">
+        <h2 class="text-center form-heading">USER MANAGEMENT</h2>
+        <h4 class="text-center admLoginHeading">Admin Access</h4>
+        <div class="text-center">
+            <input type="text" class="form-control" name="username" placeholder="Username" required ngModel>
+            <input type="password" class="form-control" name="password" placeholder="Password" required ngModel>
+        </div>
+
+        <div class="text-center loginBtn">
+            <input type="submit" class="loginBtnTxt" value="LOGIN">
+        </div>
+        <p class="loginErr" *ngIf="loginError && loginError.length > 0">
+            {{loginError}}
+        </p>
+    </form>
+</div>

@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sx-6 col-sm-6">
+            <div class="panel-title text-center">
+                <form #myform="ngForm" (ngSubmit)="addUser(myform); myform.resetForm()" class="form-container">
+                    <h3 class="text-center adUsrHeading">Add User</h3>
+
+                    <div class="form-group">
+                        <input name="name" class="form-input" placeholder="Enter Name" required ngModel>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="email" type="email" class="form-input" placeholder="Email" required ngModel>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="password" type="password" class="form-input" placeholder="Password" required
+                            ngModel>
+                    </div>
+
+                    <div class="form-group addBtn">
+                        <input type="submit" value="Add">
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+
+
+        <div class="col-sx-6 col-sm-6">
+            <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport1">
+                <h3 class="text-center ActHstHeading">Action History</h3>
+                <div *cdkVirtualFor="let action of actions" class="actioncontent">
+                    <h6 class="time timeStmpDesc">{{action.timestamp | date:'short'}}</h6>
+                    {{action.desc}}
+                </div>
+            </cdk-virtual-scroll-viewport>
+        </div>
+
+
+
+        <div class="col-sx-12 col-sm-12">
+            <cdk-virtual-scroll-viewport itemSize="2" class="example-viewport2">
+                <h3 class="text-center UsrDtlHeading">User Details</h3>
+                <table class="table UsrDtlTbl">
+                    <thead>
+                        <tr class="tblHeadCols">
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Password </th>
+                            <th>Action </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+
+                            <td *ngIf="!user.editable">{{user.name}}</td>
+                            <td *ngIf="!user.editable">{{user.email}}</td>
+                            <td *ngIf="!user.editable">{{user.password}}</td>
+
+                            <td *ngIf="user.editable"><input name="name" placeholder="Name" [(ngModel)]="newName">
+                            </td>
+                            <td *ngIf="user.editable"><input name="email" type="email" placeholder="Email"
+                                    [(ngModel)]="newEmail"></td>
+                            <td *ngIf="user.editable"><input name="password" type="password" placeholder="Password"
+                                    [(ngModel)]="newPassword"></td>
+
+                            <td *ngIf="!user.editable">
+                                <fa-icon *ngIf="!user.editable" (click)="editUser(user)" [icon]="faPen"></fa-icon>
+                                <fa-icon *ngIf="!user.editable" (click)="deleteUser(content,user)"
+                                    class="trigger-btn dltIcn" data-toggle="modal" [icon]="faTrashAlt">
+                                </fa-icon>
+                            </td>
+                            <td *ngIf="user.editable">
+                                <fa-icon *ngIf="user.editable" (click)="saveUser(user)" [icon]="faFileAlt">
+                                </fa-icon>
+                                <fa-icon *ngIf="user.editable" (click)="deleteUser(content,user)"
+                                    class="trigger-btn dltIcn" data-toggle="modal" [icon]="faTrashAlt">
+                                </fa-icon>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </cdk-virtual-scroll-viewport>
+        </div>
+    </div>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modalPopup">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-basic-title">DELETE USER</h5>
+            </div>
+            <div class="modal-body">
+                {{dltPopupMsg}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-light noBtn" (click)="d('Cross click')">No</button>
+                <button type="button" class="btn btn-outline-light dltBtn" (click)="c('yes')">Delete</button>
+            </div>
+        </div>
+
+    </ng-template>
+
+</div>

@@ -1,0 +1,68 @@
+$border-radius: 15px 15px;
+$box-shadow: 0px 0px 10px 0px;
+$form-signin-padding: 20px 40px 50px;
+$form-heading-blue: #008fdb;
+$form-control-gray: #ededed;
+$loginBtnTxt-blue:  #006ca6;
+
+.wrapper {
+	background-color: gray;
+	padding: 100px;
+	height: 700px;
+}
+
+.form-signin {
+	max-width: 400px;
+	margin: 0 auto;
+	border-radius: $border-radius 5px 5px;
+	box-shadow: $box-shadow;
+	background-color: white;
+	padding: $form-signin-padding;
+}
+
+.form-heading {
+	font-size: 25px;
+	padding: 8px;
+	margin-bottom: 20px;
+	background-color: $form-heading-blue;
+	color: white;
+	position: relative;
+	top: -20px;
+	width: 400px;
+	left: -40px;
+	border-radius: $border-radius 0px 0px;
+}
+
+.admLoginHeading {
+	color: red;
+	font-size: 15px;
+	position: relative;
+	top: -15px;
+}
+
+.form-control {
+	margin-bottom: 20px;
+	background-color: $form-control-gray;
+	font-style: italic;
+}
+
+.loginBtn {
+	position: relative;
+	top: 15px;
+}
+
+.loginBtnTxt {
+	background-color: $loginBtnTxt-blue;
+	color: white;
+	width: 100px;
+	border-radius: 5px;
+}
+
+.loginErr {
+	color: darkred;
+	font-size: medium;
+	font-weight: bold;
+	position: relative;
+    top: 33px;
+    left: 27px;
+}
