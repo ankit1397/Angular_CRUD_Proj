@@ -43,7 +43,7 @@ export class UserManagementComponent implements OnInit {
       this.actions = this.userService.getActionHistory();
     }
     else {
-      console.log("No user details filled to add..");
+      console.log("No user details filled to add...");
     }
   }
 
